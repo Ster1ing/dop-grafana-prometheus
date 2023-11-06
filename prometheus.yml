@@ -1,9 +1,12 @@
+global:
+  scrape_interval: 7s
+
 scrape_configs:
   - job_name: "My app"
-	scrape_interval: 7s
-	metrics_path: "/actuator/prometheus"
-    static_configs:
-      - targets: ["localhost:8080"]
+	metrics_path: /actuator/prometheus
 	basic_auth:
-	  - username: "bob@gmail.com"
-	  - password: "passBob"
+	  username: bob@gmail.com
+	  password: passBob
+	static_configs:
+      - targets: ["localhost:8080"]
+      
